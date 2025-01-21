@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, request
-import requests
 import sqlite3
 
 app = Flask(__name__)
@@ -13,8 +12,6 @@ CURSOR = CONNECTION.cursor()
 @app.route('/geolocation', methods=['POST'])
 def geolocation():
     data = request.get_json()
-    latitude = data['latitude']
-    longitude = data['longitude']
     # Faça algo com a geolocalização aqui
     return jsonify({'status': 'success'})
 
